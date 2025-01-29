@@ -32,7 +32,7 @@ const renderParties = () => {
     // create a new li
     const li = document.createElement('li');
     // add inner text to li
-    li.innerText = `PARTY NAME: ${singleParty.name} .\n DATE: ${singleParty.date} .\n DESCRIPTION:${singleParty.description} .\n LOCATION: ${singleParty.location}`
+    li.innerText = `PARTY NAME: ${singleParty.name} \n DATE: ${singleParty.date} \n DESCRIPTION:${singleParty.description} \n LOCATION: ${singleParty.location}`
     // add the new li to the UL node
     partyUL.append(li);
   })
