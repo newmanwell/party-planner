@@ -36,6 +36,7 @@ const renderParties = () => {
     li.innerText = `PARTY NAME: ${singleParty.name} \n DATE: ${singleParty.date} \n DESCRIPTION:${singleParty.description} \n LOCATION: ${singleParty.location}`
     // add the new li to the UL node
     partyUL.append(li);
+  
   })
   
 }
@@ -44,6 +45,7 @@ getParty();
 
 // added RSVP Endpoint 
 const getRSVP = async() => {
+  try {
   // fetch the rsvps endpoint
   const response = await fetch(`https://fsa-crud-2aa9294fe819.herokuapp.com/api/2501-ftb-et-web-ft/rsvps`);
   // convert to json
@@ -54,6 +56,9 @@ const getRSVP = async() => {
   state.rsvpList = rsvpArray;
   console.log(state.rsvpList);
   renderRSVP();
+  } catch (error){
+    alert(error);
+  }
 }
 
 const renderRSVP = () => {
